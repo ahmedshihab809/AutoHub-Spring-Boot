@@ -1,0 +1,86 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<div th:include="inner-header-workshop::head"></div>
+
+
+<body onload="sortOnLoad()">
+
+<div th:include="inner-header-workshop::nav"></div>
+
+    <section id="title">
+
+
+      <!-- Nav Bar -->
+
+
+        <style>
+      h3 {
+        font-family: 'Montserrat';
+        color: black;
+        margin: 10px;
+      }
+
+      .btn-dark {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 50px;
+      }
+
+      input {
+        width: 50px;
+      }
+
+      form {
+        margin: 5%;
+      }
+    </style>
+        <div class="container-sm">
+
+              <form th:action="@{/addServices}" method="POST">
+                <h3>Enter Services details</h3>
+                <div class="mb-3">
+                  <div class="mb-3">
+                    <select class="drop_down" name="selectedService">
+
+                      <th:block th:each="service : ${services}">
+
+                        <option th:value="${service.id}">[[${service.name}]] </option>
+
+                      </th:block>
+                              </select>
+
+                            </div>
+                          </div>
+                          <div class="mb-3">
+                            <input type="number" class="form-control"
+                              id="exampleInputPassword1" name="price"
+                              placeholder="Price">
+                          </div>
+                          <div class="mb-3">
+                            <input type="text" class="form-control"
+                              id="exampleInputPassword1" name="details"
+                              placeholder="Details">
+                          </div>
+                          <button type="submit" class="btn btn-dark mx-auto">Add
+                            Service</button>
+                        </form>
+
+                      </div>
+
+                      <footer id="footer">
+
+                        <!-- <p style="text-align: center;">© Copyright Knapsack</p> -->
+                      </footer>
+
+                      <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.js"
+                        crossorigin="anonymous"></script>
+                      <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+                        crossorigin="anonymous"></script>
+                    </body>
+
+                  </html>

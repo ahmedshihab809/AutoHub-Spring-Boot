@@ -1,0 +1,124 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<div th:include="inner-header-workshop::head"></div>
+
+
+<body onload="sortOnLoad()">
+
+<div th:include="inner-header-workshop::nav"></div>
+
+        <section id="title">
+
+
+            <!-- Nav Bar -->
+                <h1 class="text-center mt-3 mb-3">Parts</h1>
+                <div class="container-sm">
+
+
+                    <div class="row">
+
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <br>
+                        <div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div
+                                        class="table-responsive">
+                                        <table class="table
+                                            table-bordered
+                                            problem-table">
+                                            <tr>
+                                                <th>Parts ID</th>
+                                                <th>Details</th>
+                                                <th>Manufacturer</th>
+                                                <th>Price</th>
+                                                <th>Quantity</th>
+
+                                            </tr>
+
+                                                <th:block th:each="part : ${parts}">
+
+                                                    <tr>
+                                                        <td>[[${part.id}]]</td>
+                                                            <td><[[${part.details}]]</td>
+                                                                <td>[[${part.manufacturer}]]</td>
+                                                                    <td>[[${part.price}]]</td>
+                                                                        <td>[[${part.quantity}]]</td>
+                                                                            </tr>
+
+                                            </th:block>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                                <h1 class="text-center mt-3
+                                                    mb-3">Services</h1>
+                                                <div class="container-sm">
+                                                    <div class="row">
+
+                                                        <br>
+                                                        <br>
+                                                        <hr>
+                                                        <br>
+                                                        <br>
+                                                        <div>
+                                                            <div
+                                                                class="card">
+                                                                <div
+                                                                    class="card-header">
+                                                                    <div
+                                                                        class="row">
+                                                                        <div
+                                                                            class="col"></div>
+                                                                        <div
+                                                                            class="col"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="card-body">
+                                                                    <div
+                                                                        class="table-responsive">
+                                                                        <table
+                                                                            class="table
+                                                                            table-bordered
+                                                                            problem-table">
+                                                                            <tr>
+                                                                                <th>ID</th>
+                                                                                <th>Details</th>
+                                                                                <th>Price</th>
+                                                                            </tr>
+                                                                            <th:block th:each="service : ${services}">
+
+                                                                                <tr>
+                                                                                    <td>[[${service.id}]]</td>
+                                                                                    <td>[[${service.details}]]</td>
+                                                                                    <td>[[${service.price}]]</td>
+                                                                                </tr>
+
+                                                                            </th:block>
+                                                                                                        </table>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+        </section>
+                                                                            </body>
+                                                                        </html>

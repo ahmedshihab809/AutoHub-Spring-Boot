@@ -1,0 +1,150 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<div th:include="inner-header-user::head"></div>
+
+
+  <body onload="sortOnLoad()">
+  <div th:include="inner-header-user::nav"></div>
+  <div th:if="${success}" class="alert alert-success text-center">
+    [[${success}]]
+  </div>
+
+  <section class="vh-100" style="background-color: #ade8f4;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center
+              h-100">
+              <div class="col col-lg-6 mb-4 mb-lg-0">
+<!--                <% if (prob==="L") { %>-->
+<!--                  <div class="alert alert-success" role="alert">-->
+<!--                    Location Added Successfully-->
+<!--                  </div>-->
+<!--                  <% } %>-->
+<!--                    <% if (prob==="LX") { %>-->
+<!--                      <div class="alert alert-danger" role="alert">-->
+<!--                        Location Not Added-->
+<!--                      </div>-->
+<!--                      <% } %>-->
+<!--                        <% if (prob==="appointment_fixed") { %>-->
+<!--                          <div class="alert alert-success" role="alert">-->
+<!--                            Appointment Fixed!-->
+<!--                          </div>-->
+<!--                          <% } %>-->
+<!--                            <% if (prob==="appointment_not_fixed") { %>-->
+<!--                              <div class="alert alert-danger role="alert">-->
+<!--                                Appointment Not Fixed!-->
+<!--                              </div>-->
+<!--                              <% } %>-->
+                                <div class="card mb-3" style="border-radius:
+                                  .5rem;">
+                                  <div class="row g-0">
+                                    <div class="col-md-4 gradient-custom
+                                      text-center
+                                      text-white"
+                                      style="border-top-left-radius: .5rem;
+                                      border-bottom-left-radius: .5rem;
+                                      background-color:
+                                      blueviolet;">
+                                      <img
+                                        src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
+                                        alt="Avatar" class="img-fluid my-5"
+                                        style="width: 80px;"
+                                        />
+                                      <h5><span th:text="${session.username}"/> </h5>
+                                        <p>___</p>
+                                        <i class="far fa-edit mb-5"></i>
+                                      </div>
+                                      <div class="col-md-8">
+                                        <div class="card-body p-4">
+                                          <h6>Description</h6>
+                                          <p class="text-muted"><span th:text="${session.username}"/>'s
+                                              Profile</p>
+                                            <hr class="mt-0 mb-4">
+                                            <div class="row pt-1">
+                                              <div class="col-6 mb-3">
+                                                <h6>Email</h6>
+                                                <p class="text-muted">
+                                                  <span th:text="${session.email}"/></p>
+                                                </div>
+                                                <!-- <div class="col-6 mb-3">
+                                            <h6>Phone</h6>
+                                            <p class="text-muted">123 456 789</p>
+                                        </div> -->
+                                              </div>
+                                              <div class="row pt-1">
+                                                <div class="col-6 mb-3">
+                                                  <h6>Mobile</h6>
+                                                  <p class="text-muted"><span th:text="${session.mobile}"/></p>
+                                                  </div>
+                                                  <!-- <div class="col-6 mb-3">
+                          <h6>Phone</h6>
+                          <p class="text-muted">123 456 789</p>
+                      </div> -->
+                                                </div>
+                                                <hr class="mt-0 mb-4">
+                                                <div class="row pt-1">
+                                                  <div class="col-6 mb-3">
+                                                    <h6>Services Taken</h6>
+                                                  </div>
+                                                  <div class="col-6 mb-3">
+                                                    <h6>Current Appointment</h6>
+                                                  </div>
+                                                </div>
+                                                <!-- <div class="d-flex justify-content-start">
+                                        <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                                        <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                                        <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+                                    </div> -->
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+
+
+
+
+
+
+
+                                <div class="card">
+                                  <div class="card-header">
+                                    <div class="row">
+                                      <div class="col">Current Appoinments</div>
+                                      <div class="col"></div>
+                                    </div>
+                                  </div>
+                                  <div class="card-body">
+                                    <div class="table-responsive">
+                                      <table class="table
+                                        table-bordered
+                                        problem-table">
+                                        <tr>
+                                          <th>Workshop
+                                            Name</th>
+                                          <th>Workshop
+                                            Email</th>
+                                          <th>Appointment Time</th>
+
+                                        </tr>
+                                        <th:block th:each="x : ${appointments}">
+
+                                          <tr>
+                                            <td>[[${x.workshop.name}]]</td>
+                                              <td>[[${x.workshop.email}]]</td>
+                                                <td>[[${x.date}]]</td>
+                                                </tr>
+                                        </th:block>
+                                                </table>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <script src="/js/category.js"></script>
+                                          <script src="/js/sort.js"></script>
+                                          <div th:include="footer::footer"></div>
+                                        </body>
+
+                                      </html>
